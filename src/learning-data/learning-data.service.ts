@@ -1,5 +1,5 @@
 import {Injectable, Query } from '@nestjs/common';
-import { LEARNING_DATA } from 'src/constants/learning-data';
+import { LEARNING_DATA } from './../constants/learning-data';
 
 @Injectable()
 export class LearningDataService {

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { TAB_DETAILS } from 'src/constants/tab-details';
+import { TAB_DETAILS } from './../constants/tab-details';
 
 @Injectable()
 export class TabDetailsService {
