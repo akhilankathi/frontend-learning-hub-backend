@@ -5,7 +5,7 @@ import { TAB_DETAILS } from './../constants/tab-details';
 export class TabDetailsService {
     private tabDetails:any ;
     constructor(){
-        this.tabDetails = TAB_DETAILS
+        this.tabDetails = [TAB_DETAILS]
     }
 
     getTabDetails(){

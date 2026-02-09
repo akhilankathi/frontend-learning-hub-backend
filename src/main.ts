@@ -6,9 +6,17 @@ import { AppModule } from './app.module';
 
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, {
-    cors: true
+  const app = await NestFactory.create(AppModule);
+
+   app.enableCors({
+    origin: [
+      'https://automatic-palm-tree-67p7wr954qv35wqg-5173.app.github.dev',
+      'https://frontendlearninghub.netlify.app'
+    ],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true, 
   });
+  
 
   const config = new DocumentBuilder()
     .setTitle('Frontend Learning Hub')
