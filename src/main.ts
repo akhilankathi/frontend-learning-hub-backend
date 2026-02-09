@@ -6,7 +6,9 @@ import { AppModule } from './app.module';
 
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    cors: true
+  });
 
   const config = new DocumentBuilder()
     .setTitle('Frontend Learning Hub')
@@ -14,9 +16,14 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('Endpoints')
     .build();
-    
+
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document); 
+  SwaggerModule.setup('api', app, document, {
+    swaggerOptions: {
+      persistAuthorization: true,
+    },
+    useGlobalPrefix: false,
+  },);
 
   await app.listen(3000);
 }
